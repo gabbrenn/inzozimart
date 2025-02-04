@@ -29,8 +29,8 @@
 
 ### **Clone the Repository**  
 ```bash
-git clone https://github.com/gabbrenn/InzoziMart.git
-cd InzoziMart
+git clone https://github.com/gabbrenn/inzozi-mart-ecommerce.git
+cd inzozi-mart-ecommerce
 ```
 ### **Setup Frontend (Vite + React)**
 
