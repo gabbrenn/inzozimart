@@ -72,7 +72,7 @@ We welcome contributions! Fork the repo, create a branch, and submit a pull requ
 Please make sure to update tests and documentation accordingly.
 
 ## 📜 License
-This project is licensed under the **[MIT License](./licence)**
+This project is licensed under the **[MIT License](./LICENSE)**
 
 ## ✉️ For inquiries: 
 Contact us at **inzozimart@gmail.com**
