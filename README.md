@@ -17,7 +17,7 @@ InzoziMart is an e-commerce platform built using HTML, Tailwind CSS, and PHP. It
 ## ⚙️ Installation 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/gabbrenn/inzozimart.git
+   git clone https://github.com/gabbrenn/inzozimart-ecommerce.git
    ```
 2. Navigate to the project directory:
    ```sh
@@ -27,7 +27,7 @@ InzoziMart is an e-commerce platform built using HTML, Tailwind CSS, and PHP. It
 4. Import the database (if applicable) using MySQL.
 5. Run the project in your browser:
    ```sh
-   http://localhost/inzozimart/
+   http://localhost/inzozimart-ecommerce/
    ```
 
 ## 🤝 Contributing
