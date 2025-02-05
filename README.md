@@ -1,78 +1,38 @@
 # InzoziMart 🛍️  (Class work)
 
-**InzoziMart** is a modern e-commerce platform designed to provide a seamless online shopping experience in Rwanda. It includes a **Vite + React frontend** and a **PHP backend** for handling user transactions, product management, and order processing.  
+InzoziMart is an e-commerce platform built using HTML, Tailwind CSS, and PHP. It provides a seamless shopping experience with a user-friendly interface and dynamic functionalities.
 
----
+## 🛠️ Technologies Used
+- **Frontend:** HTML, Tailwind CSS
+- **Backend:** PHP
+- **Database:** MySQL (if applicable)
 
-## 🚀 Features  
-- 🛒 **User-friendly shopping experience**  
-- 🔄 **Order tracking & management**  
-- 💳 **Multiple payment options**  
-- 📦 **Fast & reliable deliveries**  
-- 📈 **Admin dashboard for store management**  
+## 🚀 Features 
+- Product listing and search
+- Shopping cart functionality
+- User authentication (login/register)
+- Order management
+- Admin dashboard for product and order management
 
----
-
-## 🛠️ Tech Stack  
-### **Frontend**  
-- ✅ **Vite + React** (Fast & efficient UI)  
-- ✅ **Tailwind CSS** (For styling)  
-- ✅ **Axios** (For API calls)  
-
-### **Backend**  
-- ✅ **PHP** (Server-side logic)  
-- ✅ **MySQL** (Database for storing user, product, and order data)   
-
----
-
-## ⚙️ Installation  
-
-### **Clone the Repository**  
-```bash
-git clone https://github.com/gabbrenn/inzozi-mart-ecommerce.git
-cd inzozi-mart-ecommerce
-```
-### **Setup Frontend (Vite + React)**
-
-1. Navigate to the frontend directory:
-  ```bash
-  cd frontend
-  ```
-
-2. Install dependencies:
-  ```bash
-  npm install
-  ```
-3. Run the development server:
-  ```bash
-  npm run dev  # Starts the frontend on http://localhost:5173
-  ```
-### **Setup Backend (PHP + MySQL)**
-
-1. Navigate to the backend directory:
-  ```bash
-  cd ../backend
-  ```
-2. Install PHP dependencies (if any):
-  ```bash
-  composer install  # Make sure Composer is installed
-  ```
-3. Start the PHP built-in server:
-  ```bash
-  php -S localhost:8000  # Runs PHP server
-  ```
-### **Database Setup**
-
-    Set up your MySQL database (create a new database).
-    Update the backend/.env file with your database credentials.
+## ⚙️ Installation 
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/gabbrenn/inzozimart.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd inzozimart
+   ```
+3. Set up a local server (e.g., XAMPP, WAMP, or Laravel Valet).
+4. Import the database (if applicable) using MySQL.
+5. Run the project in your browser:
+   ```sh
+   http://localhost/inzozimart/
+   ```
 
 ## 🤝 Contributing
-
-We welcome contributions! Fork the repo, create a branch, and submit a pull request.
-Please make sure to update tests and documentation accordingly.
+Feel free to contribute by submitting issues or pull requests.
 
 ## 📜 License
-This project is licensed under the **[MIT License](./LICENSE)**
+This project is licensed under the MIT License.
 
-## ✉️ For inquiries: 
-Contact us at **inzozimart@gmail.com**
