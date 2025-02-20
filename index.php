@@ -23,7 +23,7 @@
                     <li><a href="#" class="hover:border-b-2 border-fuchsia-500">Home</a></li>
                     <li><a href="#" class="hover:border-b-2 border-fuchsia-500">Shop</a></li>
                     <li><a href="#" class="hover:border-b-2 border-fuchsia-500">Cart</a></li>
-                    <li><a href="#" class="hover:border-b-2 border-fuchsia-500">Login</a></li>
+                    <li><a href="signin.php" class="hover:border-b-2 border-fuchsia-500">Login</a></li>
                 </ul>
             </nav>
         </div>
