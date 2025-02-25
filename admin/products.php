@@ -1,5 +1,12 @@
 <?php
     include 'include/nav.php';
+    try {
+        // Fetch inserted data
+        $stmt = $pdo->query("SELECT * FROM products ORDER BY id DESC");
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "<p class='text-red-500'>Connection failed: " . $e->getMessage() . "</p>";
+    }
 ?>
         
         <!-- Main Content -->
@@ -9,13 +16,13 @@
                 <button class="md:hidden bg-fuchsia-500 text-white px-4 py-2 rounded" onclick="toggleSidebar()">Menu</button>
             </header>
             <div class="flex justify-between mb-4">
-                <input type="text" placeholder="Search products..." class="w-1/3 p-2 text-black rounded-md border border-fuchsia-500 focus:outline-none">
-                <button class="bg-fuchsia-500 text-white px-4 py-2 rounded-md hover:bg-fuchsia-600 transition-all">Add Product</button>
+            <input type="text" id="searchInput" placeholder="Search products..." class="w-1/3 p-2 text-black rounded-md border border-fuchsia-500 focus:outline-none" onkeyup="searchProducts()">
+                <a href="add_product.php" class="bg-fuchsia-500 text-white px-4 py-2 rounded-md hover:bg-fuchsia-600 transition-all">Add Product</a>
             </div>
             
             <!-- Products Table -->
 <div class="bg-white p-4 rounded-lg shadow-lg">
-    <table class="w-full text-left">
+    <table id="productTable" class="w-full text-left">
         <thead>
             <tr class="text-gray-400 border-b border-gray-700">
                 <th class="p-3">Product Image</th>
@@ -27,32 +34,21 @@
             </tr>
         </thead>
         <tbody>
+            <?php foreach ($data as $row): ?>
             <tr class="border-b border-gray-200">
                 <td class="p-3">
-                    <img src="https://i5.walmartimages.com/seo/VILINICE-Noise-Cancelling-Headphones-Wireless-Bluetooth-Over-Ear-Headphones-with-Microphone-Black-Q8_b994b99c-835f-42fc-8094-9f6be0f9273b.be59955399cdbd1c25011d4a4251ba9b.jpeg" alt="Wireless Headphones" class="w-16 h-16 rounded">
+                    <img src="<?= $row['image'] ?>" alt="<?= $row['product_name'] ?>" class="w-16 h-16 rounded">
                 </td>
-                <td class="p-3">Wireless Headphones</td>
-                <td class="p-3">Electronics</td>
-                <td class="p-3">$120</td>
-                <td class="p-3">50</td>
+                <td class="p-3"><?= $row['product_name'] ?></td>
+                <td class="p-3"><?= $row['category'] ?></td>
+                <td class="p-3"><?= $row['price'] ?></td>
+                <td class="p-3"><?= $row['stock'] ?></td>
                 <td class="p-3 text-center">
-                    <button class="text-blue-400 hover:underline">Edit</button>
-                    <button class="text-red-400 hover:underline ml-4">Delete</button>
+                    <a href="edit_product.php?id= <?=$row['id']?>" class="text-blue-400 hover:underline">Edit</a>
+                    <a href="delete_product.php?id=<?=$row['id']?>" class='text-red-400 hover:underline ml-4' onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
                 </td>
             </tr>
-            <tr class="border-b border-gray-200">
-                <td class="p-3">
-                    <img src="https://m.media-amazon.com/images/I/61vIdWlDGcL._AC_SL1500_.jpg" alt="Smartphone" class="w-16 h-16 rounded">
-                </td>
-                <td class="p-3">Smartphone</td>
-                <td class="p-3">Electronics</td>
-                <td class="p-3">$699</td>
-                <td class="p-3">30</td>
-                <td class="p-3 text-center">
-                    <button class="text-blue-400 hover:underline">Edit</button>
-                    <button class="text-red-400 hover:underline ml-4">Delete</button>
-                </td>
-            </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>
@@ -61,3 +57,22 @@
         <?php
     include 'include/footer.php';
 ?>
+
+<script>
+    function searchProducts() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let rows = document.querySelectorAll("#productTable tbody tr");
+
+    rows.forEach(row => {
+        let name = row.cells[1]?.textContent.toLowerCase() || "";
+        let category = row.cells[2]?.textContent.toLowerCase() || "";
+
+        if (name.includes(input) || category.includes(input)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
+</script>

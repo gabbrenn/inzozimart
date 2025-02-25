@@ -4,6 +4,10 @@ if (!isset($_SESSION['username'])) {
     header("Location: index.php");
     exit;
 }
+
+$pdo = new PDO("mysql:host=localhost;dbname=inzozi", "root", "", [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
