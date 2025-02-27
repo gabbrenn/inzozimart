@@ -48,14 +48,6 @@
                 <div class="bg-fuchsia-200 p-4 hover:border-b-2 border-fuchsia-500 text-center rounded shadow">Fashion</div>
                 <div class="bg-fuchsia-200 p-4 hover:border-b-2 border-fuchsia-500 text-center rounded shadow">Home Appliances</div>
                 <div class="bg-fuchsia-200 p-4 hover:border-b-2 border-fuchsia-500 text-center rounded shadow">Beauty & Personal Care</div>
-                <!-- <div class="bg-gray-100 p-4 text-center rounded shadow">Sports & Outdoors</div>
-                <div class="bg-gray-100 p-4 text-center rounded shadow">Toys & Games</div>
-                <div class="bg-gray-100 p-4 text-center rounded shadow">Automotive</div>
-                <div class="bg-gray-100 p-4 text-center rounded shadow">Books & Stationery</div>
-                <div class="bg-gray-100 p-4 text-center rounded shadow">Health & Wellness</div>
-                <div class="bg-gray-100 p-4 text-center rounded shadow">Furniture</div>
-                <div class="bg-gray-100 p-4 text-center rounded shadow">Groceries</div>
-                <div class="bg-gray-100 p-4 text-center rounded shadow">Pet Supplies</div> -->
             </div>
         </section>
         

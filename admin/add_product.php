@@ -1,10 +1,15 @@
 <?php
 include 'include/nav.php'; // Include your database connection
 
-$message="";
+$message = "";
+
+// Fetch categories for the dropdown
+$stmt = $pdo->query("SELECT category_id, category_name FROM categories ORDER BY category_name ASC");
+$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product_name = $_POST['product_name'];
-    $category = $_POST['category'];
+    $category = $_POST['category']; // Category ID from the dropdown
     $price = $_POST['price'];
     $stock = $_POST['stock'];
 
@@ -31,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             move_uploaded_file($image_tmp, $image_path);
 
             // Insert into the database
-            $stmt = $pdo->prepare("INSERT INTO products (product_name, category, price, stock, image) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO products (product_name, category_id, price, stock, image) VALUES (?, ?, ?, ?, ?)");
             $stmt->execute([$product_name, $category, $price, $stock, $image_path]);
 
             $message = "Product added successfully!";
@@ -44,43 +49,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<!-- Main Content -->
+<main class="flex-1 p-6">
+    <h1 class="text-2xl font-bold mb-4">Add New Product</h1>
 
-        <!-- Main Content -->
-        <main class="flex-1 p-6">
-            <h1 class="text-2xl font-bold mb-4">Add New Product</h1>
+    <?php if ($message): ?>
+        <p class="mb-4 text-green-600"><?= htmlspecialchars($message) ?></p>
+    <?php endif; ?>
 
-            <?php if ($message): ?>
-                <p class="mb-4 text-green-600"><?= htmlspecialchars($message) ?></p>
-            <?php endif; ?>
+    <form action="add_product.php" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded shadow-md max-w-lg">
+        <div class="mb-4">
+            <label class="block font-medium mb-1">Product Name</label>
+            <input type="text" name="product_name" class="w-full p-2 border rounded" required>
+        </div>
 
-            <form action="add_product.php" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded shadow-md max-w-lg">
-                <div class="mb-4">
-                    <label class="block font-medium mb-1">Product Name</label>
-                    <input type="text" name="product_name" class="w-full p-2 border rounded" required>
-                </div>
+        <div class="mb-4">
+            <label class="block font-medium mb-1">Category</label>
+            <select name="category" class="w-full p-2 border rounded" required>
+                <option value="" disabled selected>Select a category</option>
+                <?php foreach ($categories as $category): ?>
+                    <option value="<?= $category['category_id'] ?>"><?= htmlspecialchars($category['category_name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
 
-                <div class="mb-4">
-                    <label class="block font-medium mb-1">Category</label>
-                    <input type="text" name="category" class="w-full p-2 border rounded" required>
-                </div>
+        <div class="mb-4">
+            <label class="block font-medium mb-1">Price</label>
+            <input type="number" name="price" step="0.01" class="w-full p-2 border rounded" required>
+        </div>
 
-                <div class="mb-4">
-                    <label class="block font-medium mb-1">Price</label>
-                    <input type="number" name="price" step="0.01" class="w-full p-2 border rounded" required>
-                </div>
+        <div class="mb-4">
+            <label class="block font-medium mb-1">Stock</label>
+            <input type="number" name="stock" class="w-full p-2 border rounded" required>
+        </div>
 
-                <div class="mb-4">
-                    <label class="block font-medium mb-1">Stock</label>
-                    <input type="number" name="stock" class="w-full p-2 border rounded" required>
-                </div>
+        <div class="mb-4">
+            <label class="block font-medium mb-1">Product Image</label>
+            <input type="file" name="image" accept="image/*" class="w-full p-2 border rounded" required>
+        </div>
 
-                <div class="mb-4">
-                    <label class="block font-medium mb-1">Product Image</label>
-                    <input type="file" name="image" accept="image/*" class="w-full p-2 border rounded" required>
-                </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add Product</button>
+    </form>
+</main>
 
-                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add Product</button>
-            </form>
-        </main>
-
-<?php include"include/footer.php";?>
+<?php include "include/footer.php"; ?>
