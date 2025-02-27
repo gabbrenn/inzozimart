@@ -22,7 +22,7 @@ try {
         <button class="md:hidden bg-fuchsia-500 text-white px-4 py-2 rounded" onclick="toggleSidebar()">Menu</button>
     </header>
     <div class="flex justify-between mb-4">
-        <input type="text" id="searchInput" placeholder="Search products..." class="w-1/3 p-2 text-black rounded-md border border-fuchsia-500 focus:outline-none" onkeyup="searchProducts()">
+        <input type="text" id="searchInput" placeholder="Search Category..." class="w-1/3 p-2 text-black rounded-md border border-fuchsia-500 focus:outline-none" onkeyup="searchProducts()">
         <a href="add_category.php" class="bg-fuchsia-500 text-white px-4 py-2 rounded-md hover:bg-fuchsia-600 transition-all">Add Category</a>
     </div>
     <!-- Products Table -->
