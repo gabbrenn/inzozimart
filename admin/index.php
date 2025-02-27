@@ -4,7 +4,7 @@ if (isset($_SESSION['username'])) {
     header("Location: dashboard.php");
     exit;
 }
-$pdo = new PDO("mysql:host=localhost;dbname=inzozi", "root", "", [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+include 'include/db.php';
 
 $message = "";
 

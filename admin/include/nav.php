@@ -4,10 +4,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: index.php");
     exit;
 }
-
-$pdo = new PDO("mysql:host=localhost;dbname=inzozi", "root", "", [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
+include 'db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +33,7 @@ $pdo = new PDO("mysql:host=localhost;dbname=inzozi", "root", "", [
         <ul class="space-y-4">
             <li><a href="index.php" class="block p-2 hover:bg-gray-800 rounded">Dashboard</a></li>
             <li><a href="products.php" class="block p-2 hover:bg-gray-800 rounded">Products</a></li>
-            <li><a href="#" class="block p-2 hover:bg-gray-800 rounded">Categories</a></li>
+            <li><a href="categories.php" class="block p-2 hover:bg-gray-800 rounded">Categories</a></li>
             <li><a href="#" class="block p-2 hover:bg-gray-800 rounded">Orders</a></li>
             <li><a href="#" class="block p-2 hover:bg-gray-800 rounded">Users</a></li>
             <li><a href="#" class="block p-2 hover:bg-gray-800 rounded">Settings</a></li>
