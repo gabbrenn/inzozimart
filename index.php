@@ -40,9 +40,9 @@ $products = $productQuery->fetchAll(PDO::FETCH_ASSOC);
         
         <nav class="w-full sm:w-auto">
             <ul class="flex flex-wrap justify-center sm:justify-end space-x-4">
-                <li><a href="#" class="hover:border-b-2 border-fuchsia-500">Home</a></li>
-                <li><a href="#" class="hover:border-b-2 border-fuchsia-500">Shop</a></li>
-                <li><a href="#" class="hover:border-b-2 border-fuchsia-500">Cart</a></li>
+                <li><a href="index.php" class="hover:border-b-2 border-fuchsia-500">Home</a></li>
+                <li><a href="#" class="hover:border-b-2 border-fuchsia-500" onclick="return alert('Sorry! System Is Still on development!')">Shop</a></li>
+                <li><a href="#" class="hover:border-b-2 border-fuchsia-500" onclick="return alert('Sorry! System Is Still on development!')">Cart</a></li>
 
                 <!-- Check if user is logged in -->
                 <?php if (isset($_SESSION['user'])): ?>
