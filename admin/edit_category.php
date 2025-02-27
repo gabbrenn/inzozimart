@@ -1,5 +1,5 @@
 <?php
-include 'include/nav.php';
+include 'include/nav.php';//include nav
 $id = $_GET['id'];
 $stmt = $pdo->prepare("SELECT * FROM categories WHERE category_id = :id");
 $stmt->execute(['id' => $id]);
