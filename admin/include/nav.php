@@ -34,9 +34,9 @@ include 'db.php';
             <li><a href="index.php" class="block p-2 hover:bg-gray-800 rounded">Dashboard</a></li>
             <li><a href="products.php" class="block p-2 hover:bg-gray-800 rounded">Products</a></li>
             <li><a href="categories.php" class="block p-2 hover:bg-gray-800 rounded">Categories</a></li>
-            <li><a href="#" class="block p-2 hover:bg-gray-800 rounded">Orders</a></li>
-            <li><a href="#" class="block p-2 hover:bg-gray-800 rounded">Users</a></li>
-            <li><a href="#" class="block p-2 hover:bg-gray-800 rounded">Settings</a></li>
+            <li><a href="#" class="block p-2 hover:bg-gray-800 rounded" onclick="return alert('Sorry! System Is Still on development!')">Orders</a></li>
+            <li><a href="users.php" class="block p-2 hover:bg-gray-800 rounded">Users</a></li>
+            <li><a href="#" class="block p-2 hover:bg-gray-800 rounded" onclick="return alert('Sorry! System Is Still on development!')">Settings</a></li>
         </ul>
     </nav>
 
