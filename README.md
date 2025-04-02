@@ -1,6 +1,6 @@
-# InzoziMart 🛍️  (E-commerce)
+# InzoziMart 🛍️  (E-commerce ~ MVC)
 
-InzoziMart is an e-commerce platform built using HTML, Tailwind CSS, and PHP. It provides a seamless shopping experience with a user-friendly interface and dynamic functionalities.
+InzoziMart is an e-commerce platform built using MVC (Model, View and Controller) framework, Tailwind CSS, and PHP. It provides a seamless shopping experience with a user-friendly interface and dynamic functionalities.
 
 ## 🛠️ Technologies Used
 - **Frontend:** HTML, Tailwind CSS
